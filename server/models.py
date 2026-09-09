@@ -130,7 +130,7 @@ class Event(db.Model, SerializerMixin):
                 print("Integer")
             if type(value) == float:
                 print("Float")
-            return (type(value))
+            return (float(value))
 
     # frequency = db.Column(db.String)
     # day = db.Column(db.String)
