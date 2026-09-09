@@ -1,4 +1,4 @@
-import "../index.css";
+import { BASE_URL } from '../api/fetch.js';
 
 import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
@@ -107,7 +107,7 @@ function App() {
   }
         
   // const fetchLoggedInUser = (sessionData) => {
-  //   fetch(`https://peaksync-back-end.onrender.com/users/${sessionData}`)
+  //   fetch(`${BASE_URL}/users/${sessionData}`)
   //   .then((response) => response.json())
   //   .then((userData) => {
   //       setCurrentUser(userData)
@@ -115,7 +115,7 @@ function App() {
   // }
 
   useEffect(() => {
-    // fetch('https://peaksync-back-end.onrender.com/check-session')
+    // fetch(`${BASE_URL}/check-session`)
     // .then((response) => response.json())
     // .then((sessionData) => {
     //   console.log(sessionData)
@@ -123,14 +123,14 @@ function App() {
     // })
     const userId = localStorage.getItem("user_id")
     if (userId) {
-        fetch(`https://peaksync-back-end.onrender.com/users/${userId}`)
+        fetch(`${BASE_URL}/users/${userId}`)
         .then((response) => response.json())
         .then((loggedInUserData) => setCurrentUser(loggedInUserData))
     }
   }, [currentUserToggle])
 
   useEffect(() => {
-    fetch("https://peaksync-back-end.onrender.com/events")
+    fetch(`${BASE_URL}/events`)
     .then((response) => response.json())
     .then((eventData) => {
       setAllEvents(eventData)
@@ -138,7 +138,7 @@ function App() {
   }, [sessionsToggle])
   
   useEffect(() => {
-    fetch("https://peaksync-back-end.onrender.com/memberships")
+    fetch(`${BASE_URL}/memberships`)
     .then((response) => response.json())
     .then((membershipData) => {
       setAllMemberships(membershipData)
@@ -146,7 +146,7 @@ function App() {
   }, [membershipsToggle])
 
   useEffect(() => {
-    fetch('https://peaksync-back-end.onrender.com/sessions')
+    fetch(`${BASE_URL}/sessions`)
     .then((response) => response.json())
     .then((allSessionsData) => {
       setAllSessions(allSessionsData)
@@ -155,7 +155,7 @@ function App() {
 
   // useEffect(() => {
   //   if (currentUser.admin === true) {
-  //     fetch('https://peaksync-back-end.onrender.com/signups')
+     fetch(`${BASE_URL}/signups`)
   //     .then((response) => response.json())
   //     .then((signupData) => setAllSignups(signupData))
   //   }

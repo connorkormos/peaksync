@@ -1,3 +1,4 @@
+import { BASE_URL } from '../../../api/fetch.js';
 import styles from './CreateUser.module.css'
 
 import { useState, useContext } from 'react'
@@ -72,7 +73,7 @@ const CreateUser = () => {
     
     const handleCreateUser = () => {
         console.log(newUser)
-        fetch('https://peaksync-back-end.onrender.com/users', {
+        fetch(`${BASE_URL}/users`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

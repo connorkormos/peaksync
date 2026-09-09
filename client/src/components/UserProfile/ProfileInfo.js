@@ -1,3 +1,4 @@
+import { BASE_URL } from '../../api/fetch.js';
 import styles from './UserProfile.module.css'
 
 import { useState, useContext, useEffect } from 'react'
@@ -64,7 +65,7 @@ const ProfileInfo = ({ selectedUser }) => {
     }
 
     const handleProfileEdit = () => {
-        fetch(`https://peaksync-back-end.onrender.com/users/${selectedUser.id}`, {
+        fetch(`${BASE_URL}/users/${selectedUser.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

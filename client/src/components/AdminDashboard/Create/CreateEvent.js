@@ -5,6 +5,7 @@ import { AllEventsContext } from '../../App'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import { BASE_URL } from '../../../api/fetch.js'
 
 const CreateEvent = () => {
 
@@ -63,7 +64,8 @@ const CreateEvent = () => {
 
     const handleEventSubmit = (event) => {
         event.preventDefault()
-        fetch('https://peaksync-back-end.onrender.com/events', {
+        // fetch(`${BASE_URL}/events`, {
+        fetch(`${BASE_URL}/events`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

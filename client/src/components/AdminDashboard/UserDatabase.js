@@ -9,6 +9,8 @@ import Dropdown from "react-bootstrap/Dropdown"
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
+import { BASE_URL } from '../../api/fetch.js'
+
 const UserDatabase = () => {
 
     const { allUsers, setAllUsers } = useContext(AllUsersContext)
@@ -68,7 +70,8 @@ const UserDatabase = () => {
 
     const handleFetchUsers = (event) => {
         event.preventDefault()
-        fetch('https://peaksync-back-end.onrender.com/users/filter', {
+        // fetch(`${BASE_URL}/users/filter`, {
+        fetch(`${BASE_URL}/users/filter`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

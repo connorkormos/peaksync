@@ -1,3 +1,4 @@
+import { BASE_URL } from '../../../api/fetch.js';
 import styles from './EventData.module.css'
 
 import { useState, useContext } from 'react'
@@ -44,7 +45,7 @@ const EventData = ({ event }) => {
     }
 
     const handleEventChangeSubmit = (event_id) => {
-        fetch(`https://peaksync-back-end.onrender.com/events/${event_id}`, {
+        fetch(`${BASE_URL}/events/${event_id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -65,7 +66,7 @@ const EventData = ({ event }) => {
         })
         if (editedEvent.price != event.price) {
             console.log("Editing Stripe product price...")
-            fetch('https://peaksync-back-end.onrender.com/update_stripe_event_product', {
+            fetch(`${BASE_URL}/update_stripe_event_product`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -86,7 +87,7 @@ const EventData = ({ event }) => {
     const handleEventDelete = (event_id) => {
         if (window.confirm("Are you sure you want to delete this event?  This action cannot be undone.") === true) {
             if (event.sessions.length === 0) {
-                fetch(`https://peaksync-back-end.onrender.com/events/${event_id}`, {
+                fetch(`${BASE_URL}/events/${event_id}`, {
                     method: 'DELETE'
                 })
                 const updatedEvents = allEvents.filter((event) => event.id != event_id)

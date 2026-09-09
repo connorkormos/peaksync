@@ -2,6 +2,7 @@ import styles from './Login.module.css'
 // import styles from './Login.css';
 import { useState, useContext, useEffect } from "react"
 import { useHistory } from "react-router-dom"
+import { BASE_URL } from '../../api/fetch.js'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -19,7 +20,8 @@ const Login = () => {
     const [password, setPassword] = useState("")
 
     const fetchUserBySessionData = (sessionData) => {
-        fetch(`https://peaksync-back-end.onrender.com/users/${sessionData}`)
+        // fetch(`${BASE_URL}/users/${sessionData}`)
+        fetch(`${BASE_URL}/users/${sessionData}`)
         .then((response) => response.json())
         .then((userData) => {
             setCurrentUser(userData)
@@ -28,12 +30,13 @@ const Login = () => {
     }
 
     useEffect(() => {
-        // fetch('https://peaksync-back-end.onrender.com/check-session')
+        // fetch(`${BASE_URL}/check-session`)
         // .then((response) => response.json())
         // .then((sessionData) => fetchUserBySessionData(sessionData))
         const userId = localStorage.getItem("user_id")
         if (userId) {
-            fetch(`https://peaksync-back-end.onrender.com/users/${userId}`)
+            // fetch(`${BASE_URL}/users/${userId}`)
+            fetch(`${BASE_URL}/users/${userId}`)
             .then((response) => response.json())
             .then((loggedInUserData) => setCurrentUser(loggedInUserData))
         }
@@ -41,7 +44,8 @@ const Login = () => {
     
     const handleUserLogin = (event) => {
         event.preventDefault()
-        fetch("https://peaksync-back-end.onrender.com/login", {
+        // fetch(`${BASE_URL}/login`, {
+        fetch(`${BASE_URL}/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -59,7 +63,8 @@ const Login = () => {
     }
 
     const handleLogout = () => {
-        fetch('https://peaksync-back-end.onrender.com/logout', {
+        // fetch(`${BASE_URL}/logout`, {
+        fetch(`${BASE_URL}/logout`, {
             method: 'DELETE'
         })
         localStorage.removeItem("user_id")

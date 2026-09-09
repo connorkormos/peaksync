@@ -3,6 +3,7 @@ import styles from './SignUp.module.css'
 import { useState, useContext } from "react"
 import { useHistory } from 'react-router-dom'
 import { LoggedInUserContext } from "../App"
+import { BASE_URL } from '../../api/fetch.js'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -49,7 +50,8 @@ const SignUp = () => {
     const handleCreateAccount = (event) => {
         event.preventDefault()
         if (newUser.password === confirmPassword) {
-            fetch("https://peaksync-back-end.onrender.com/create-account", {
+            // fetch(`${BASE_URL}/create-account`, {
+            fetch(`${BASE_URL}/create-account`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

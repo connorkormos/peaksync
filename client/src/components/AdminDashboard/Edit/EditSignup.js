@@ -1,3 +1,4 @@
+import { BASE_URL } from '../../../api/fetch.js';
 import styles from './EditSignup.module.css'
 
 import { useState, useEffect, useContext } from 'react'
@@ -26,7 +27,7 @@ const EditSignup = () => {
     
     const handleEditSignup = (event) => {
         if (window.confirm("Are you sure you want to relocate this signup?") === true) {
-            fetch(`https://peaksync-back-end.onrender.com/signups/${signupToEdit.id}`, {
+            fetch(`${BASE_URL}/signups/${signupToEdit.id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -46,7 +47,7 @@ const EditSignup = () => {
 
     const handleDeleteSignup = () => {
         if (window.confirm("Are you sure you want to cancel this signup?  This cannot be undone!") === true) {
-            fetch(`https://peaksync-back-end.onrender.com/signups/${signupToEdit.id}`, {
+            fetch(`${BASE_URL}/signups/${signupToEdit.id}`, {
                 method: 'DELETE',
             })
             .then((response) => response.json())

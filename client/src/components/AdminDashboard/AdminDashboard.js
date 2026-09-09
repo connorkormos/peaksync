@@ -17,7 +17,7 @@ import ListGroup from 'react-bootstrap/esm/ListGroup'
 import Form from 'react-bootstrap/Form'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Button from 'react-bootstrap/Button'
-
+import { BASE_URL } from '../../api/fetch.js'
 const AdminDashboard = () => {
     
     const { currentUser } = useContext(LoggedInUserContext)
@@ -29,7 +29,7 @@ const AdminDashboard = () => {
     const history = useHistory()
     
     // useEffect(() => {
-        //     fetch('https://peaksync-back-end.onrender.com/signups')
+        //     fetch(`${BASE_URL}/signups`)
         //     .then((response) => response.json())
         //     .then((signupData) => setAllSignups(signupData))
         //   }, [])
@@ -68,7 +68,8 @@ const AdminDashboard = () => {
         event.preventDefault()
         const convertedSignupFilter = signupFilter.split(" ").join("_").toLowerCase()
         console.log(convertedSignupFilter)
-        fetch('https://peaksync-back-end.onrender.com/signups/filter', {
+        // fetch(`${BASE_URL}/signups/filter`, {
+        fetch(`${BASE_URL}/signups/filter`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

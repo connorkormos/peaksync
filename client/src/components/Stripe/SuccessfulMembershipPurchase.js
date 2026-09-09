@@ -1,3 +1,4 @@
+import { BASE_URL } from '../../api/fetch.js';
 import { useContext, useState } from 'react'
 import { LoggedInUserContext, CurrentUserToggleContext } from '../App'
 
@@ -9,7 +10,7 @@ const SuccessfulMembershipPurchase = () => {
     const [fetchCompleted, setFetchCompleted] = useState(false)
 
     if (!fetchCompleted && Object.keys(currentUser).length > 0) {
-        fetch(`https://peaksync-back-end.onrender.com/last-user-membership-purchase/${currentUser.id}`)
+        fetch(`${BASE_URL}/last-user-membership-purchase/${currentUser.id}`)
         .then((response) => response.json())
         .then((updatedUserData) => {
             console.log(updatedUserData)

@@ -1,3 +1,4 @@
+import { BASE_URL } from '../../../api/fetch.js';
 import styles from './CreateMembership.module.css'
 
 import { useState, useContext } from 'react'
@@ -38,7 +39,7 @@ const CreateMembership = () => {
 
     const handleMembershipSubmit = (event) => {
         event.preventDefault()
-        fetch('https://peaksync-back-end.onrender.com/memberships', {
+        fetch(`${BASE_URL}/memberships`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

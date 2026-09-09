@@ -1,3 +1,4 @@
+import { BASE_URL } from '../../../api/fetch.js';
 import styles from './CreateSession.module.css'
 
 import { useState, useContext } from 'react'
@@ -74,7 +75,7 @@ const CreateSession = () => {
     const handleSessionSubmit = (event) => {
         console.log("test")
         event.preventDefault()
-        fetch('https://peaksync-back-end.onrender.com/sessions', {
+        fetch(`${BASE_URL}/sessions`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

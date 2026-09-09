@@ -1,3 +1,4 @@
+import { BASE_URL } from '../../api/fetch.js';
 import styles from './EventDetailsModal.module.css'
 
 import { useContext } from 'react'
@@ -35,7 +36,7 @@ const EventDetailsModal = ({ clickedSession, setClickedSession, showGuestModal, 
             if (currentUser.membership.type !== 'Member') {
                 event.target.submit()
             } else if (currentUser.membership.type === 'Member' && clickedSession.values.free_for_members === true) {
-                fetch('https://peaksync-back-end.onrender.com/signups', {
+                fetch(`${BASE_URL}/signups`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

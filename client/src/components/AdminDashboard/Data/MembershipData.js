@@ -1,3 +1,4 @@
+import { BASE_URL } from '../../../api/fetch.js';
 import styles from './MembershipData.module.css'
 
 import { useState, useContext } from 'react'
@@ -45,7 +46,7 @@ const MembershipData = ({ membership }) => {
     }
 
     const handleMembershipChangeSubmit = (membership_id) => {
-        fetch(`https://peaksync-back-end.onrender.com/memberships/${membership_id}`, {
+        fetch(`${BASE_URL}/memberships/${membership_id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -61,7 +62,7 @@ const MembershipData = ({ membership }) => {
         console.log(membership.price, typeof membership.price)
         if (Number(editedMembership.price) !== Number(membership.price) || editedMembership.name !== membership.name || editedMembership.description !== membership.description) {
             console.log("Editing Stripe product price...")
-            fetch('https://peaksync-back-end.onrender.com/update_stripe_membership_product', {
+            fetch(`${BASE_URL}/update_stripe_membership_product`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -82,7 +83,7 @@ const MembershipData = ({ membership }) => {
         if (window.confirm("Are you sure you want to delete this membership?  This action cannot be undone.") === true) {
             if (membership.users.length === 0) {
                 console.log(membership.users.length)
-                fetch(`https://peaksync-back-end.onrender.com/memberships/${membership_id}`, {
+                fetch(`${BASE_URL}/memberships/${membership_id}`, {
                         method: 'DELETE'
                     })
                     const updatedMemberships = allMemberships.filter((memb) => memb.id != membership_id)

@@ -1,3 +1,4 @@
+// import { BASE_URL } from '../../api/fetch.js';
 import styles from './UserProfile.module.css'
 
 import { useState, useContext } from 'react'
@@ -21,7 +22,7 @@ const UserBookings = ({ selectedUser }) => {
 
     // const handleCancelBooking = (signup) => {
     //     if (window.confirm("Are you sure you want to cancel this booking?") == true) {
-    //         fetch(`https://peaksync-back-end.onrender.com/signups/${signup.id}`, {
+    //         fetch(`${BASE_URL}/signups/${signup.id}`, {
     //             method: 'DELETE',
     //         })
     //         .then((response) => response.json())
