@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { LoggedInUserContext, AllUsersContext } from '../App'
+import { LoggedInUserContext } from '../App'
 import { useLocation } from 'react-router-dom'
 
 import ProfileInfo from "./ProfileInfo"

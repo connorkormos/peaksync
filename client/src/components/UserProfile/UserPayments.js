@@ -19,6 +19,7 @@ const UserPayments = ({ selectedUser }) => {
                 </ListGroup.Item>
             )
         }
+        return null;
     })
     
     return (
