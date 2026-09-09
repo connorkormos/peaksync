@@ -1,0 +1,1 @@
+export const BASE_URL = "https://peaksync-api.up.railway.app";
