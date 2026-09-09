@@ -24,6 +24,7 @@ const UserProfile = () => {
 
     return (
         // {selectedUser &&
+        <div className="navBarOffsetContainer">
         <Tabs
             defaultActiveKey="profile"
             id="justify-tab-example"
@@ -40,6 +41,7 @@ const UserProfile = () => {
                 {Object.keys(selectedUser).length > 0 && <UserPayments selectedUser={selectedUser} />}
             </Tab>
         </Tabs>
+        </div>
         // }
     )
 }

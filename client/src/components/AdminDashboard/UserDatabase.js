@@ -89,7 +89,7 @@ const UserDatabase = () => {
     }
 
     return (
-        <div>
+        <div className="navBarOffsetContainer">
             <h1 className={styles.userDatabaseH1}>User Database</h1>
             <div className={styles.searchDiv}>
             <Form className={styles.searchForm} onSubmit={handleFetchUsers}>

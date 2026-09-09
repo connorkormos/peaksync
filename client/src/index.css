@@ -27,6 +27,10 @@ body {
     font-size: 2rem;
 }
 
+.navBarOffsetContainer {
+    margin-top: 10vh;
+}
+
 h1 {
     text-align: center;
 }

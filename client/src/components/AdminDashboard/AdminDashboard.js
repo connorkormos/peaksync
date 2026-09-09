@@ -87,7 +87,7 @@ const AdminDashboard = () => {
     }
 
     return (
-        <>
+        <div className="navBarOffsetContainer">
             <h1 className={styles.adminDashboardH1}>Admin Dashboard</h1>
             <Tabs
                 defaultActiveKey="profile"
@@ -184,8 +184,8 @@ const AdminDashboard = () => {
                     <Button className={styles.userDatabaseRedirectButton} onClick={() => history.push({pathname:"/database"})}>Go to User Database</Button>
                 </Tab>
             </Tabs>
-        </>
+        </div>
     )
 }
 
-export default AdminDashboard
+export default AdminDashboard;
