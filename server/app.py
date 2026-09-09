@@ -543,8 +543,9 @@ def events():
             db.session.add(new_event)
             db.session.commit()
             response = make_response(new_event.to_dict(), 200)
-        except:
-            response = make_response({"error": "Unsuccessful creation of new events"}, 404)
+        except Exception as e:
+            db.session.rollback()
+            response = make_response({"error": str(e)}, 500)
 
     return response
 
