@@ -1,7 +1,7 @@
 .modal {
     position: relative;
     scale: 1.75;
-    top: -70vh;
+    /* top: -70vh; */
 }
 
 .spacesRemainingSpan {
