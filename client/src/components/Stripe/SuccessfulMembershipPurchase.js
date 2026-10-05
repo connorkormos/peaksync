@@ -1,6 +1,7 @@
 import { BASE_URL } from '../../api/fetch.js';
 import { useContext, useState } from 'react'
 import { LoggedInUserContext, CurrentUserToggleContext } from '../App'
+import styles from './Stripe.module.css'
 
 const SuccessfulMembershipPurchase = () => {
 
@@ -20,10 +21,10 @@ const SuccessfulMembershipPurchase = () => {
     }
 
     return (
-        <>
+        <div className={styles.stripeResponseContainer}>
             <h1 style={{marginTop:'3rem', marginBottom:'2rem'}}>Success!</h1>
             <h2 style={{textAlign:'center'}}>Hi {currentUser.first_name}. Thanks for making your purchase!</h2>
-        </>
+        </div>
     )
 }
 

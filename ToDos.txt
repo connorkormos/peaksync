@@ -1,0 +1,5 @@
+STRIPE:
+
+-Implement web hook verification
+    -Current verification of payment works when the user is automatically navigated back to website
+        -But if an error occurs, the user doesn't get proper confirmation
