@@ -8,7 +8,7 @@ const SuccessfulSignup = () => {
 
     return (
         <div className={styles.stripeResponseContainer}>
-            <h1>Thanks for your purchase, {currentUser.first_name}!</h1>
+            <h1>Thanks for your purchase{currentUser.first_name ? `, ${currentUser.first_name}` : ''}!</h1>
         </div>
     )
 }

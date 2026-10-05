@@ -141,7 +141,7 @@ def create_event_checkout_session(event_id, session_id, user_id):
         # db.session.commit()
         new_payment = Payment(
             user_id=user_id,
-            signup_id=new_signup.id,
+            # signup_id=new_signup.id,
             stripe_payment_id=checkout_session.id,
             successful=True
         )
