@@ -2,7 +2,7 @@
   "name": "phase-4-rails-putting-it-all-together-auth-client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://localhost:5555",
+  "proxy": "https://peaksync-api.up.railway.app",
   "dependencies": {
     "@stripe/react-stripe-js": "^2.1.0",
     "@stripe/stripe-js": "^1.53.0",

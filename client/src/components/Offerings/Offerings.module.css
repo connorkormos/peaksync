@@ -1,3 +1,12 @@
+.orderConfirmationPage {
+    width: max-content;
+    margin: 15rem auto;
+}
+
+.orderConfirmationContent {
+    width: auto;
+}
+
 .offeringsWrapperDiv, .classOfferingsBackground {
     position: fixed;
     top: 0;

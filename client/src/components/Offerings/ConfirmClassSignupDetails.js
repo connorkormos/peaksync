@@ -1,3 +1,4 @@
+import { BASE_URL } from '../../api/fetch.js'
 import { useContext } from 'react'
 import { LoggedInUserContext } from '../App'
 import { useLocation } from 'react-router-dom'
@@ -25,7 +26,7 @@ const ConfirmClassSignupDetails = () => {
                 <p>{event.description}</p>
                 <p>If this sounds good to you, proceed to checkout!</p>
                 {currentUser.membership.type !== 'Member' ?
-                <form action={`/create-event-checkout-session/${event.id}`} method="POST">
+                <form action={`${BASE_URL}/create-event-checkout-session/${event.id}`} method="POST">
                     <Button type="submit">Sounds good! Take me to Checkout.</Button>
                 </form>
                 : null}

@@ -18,8 +18,8 @@ CORS(app)
 
 import stripe
 stripe.api_key = 'sk_test_51NBMlfBoM5Q6sMKnOSgo4QBNYWSJQS1SZ9KY559Li3ZZDCw2bm95qgKrDQ80LJkBq5paMqGKiF2cATnNJO796srX007Nk47WFY'
-YOUR_DOMAIN = 'http://127.0.0.1:5555'
-LOCAL_DOMAIN = 'http://localhost:4000'
+YOUR_DOMAIN = 'https://peaksync-api.up.railway.app'
+LOCAL_DOMAIN = 'https://peaksync.up.railway.app'
 # Views go here!
 
 @app.route('/')

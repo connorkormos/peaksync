@@ -91,7 +91,7 @@ const EventDetailsModal = ({ clickedSession, setClickedSession, showGuestModal, 
                         Close
                     </Button>
                     {clickedSession.values.spaces > 0 && Object.keys(currentUser).length > 0 && currentDate < clickedSession.start ?
-                    <form onSubmit={handleConfirmSignup} action={`/create-event-checkout-session/${clickedSession.values.event_id}/${clickedSession.values.session_id}/${currentUser.id}`} method='POST'>
+                    <form onSubmit={handleConfirmSignup} action={`${BASE_URL}/create-event-checkout-session/${clickedSession.values.event_id}/${clickedSession.values.session_id}/${currentUser.id}`} method='POST'>
                         <Button type="submit">Sign Up!</Button>
                     </form>
                     : null}
